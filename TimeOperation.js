@@ -18,7 +18,7 @@ export default class TimeOperation {
     return this.#ONEDAY;
   }
   // 获取单个值
-  getValue(type = 'yy') {
+  get(type = 'yyyy') {
     const typeObj = {
       'yyyy': `${this.#date.getFullYear()}`,
       'MM': `${this.#date.getMonth() + 1}`.padStart(2, '0'),
@@ -52,45 +52,45 @@ export default class TimeOperation {
     return type;
   }
   // 获取当天的 最早时间
-  getFirstTime() {
+  getFirstTime(type) {
     const date = new Date(this.#date);
     date.setHours(0);
     date.setMinutes(0);
     date.setSeconds(0);
-    return new TimeOperation(date);
+    return new TimeOperation(date).format(type);
   }
   // 获取当天的 最后时间
-  getLastTime() {
+  getLastTime(type) {
     const date = new Date(this.#date);
     date.setHours(23);
     date.setMinutes(59);
     date.setSeconds(59);
-    return new TimeOperation(date);
+    return new TimeOperation(date).format(type);
   }
   // 获取当月份 第一天
-  getMonthFirstDay() {
+  getMonthFirstDay(type) {
     const date = new Date(this.#date);
     date.setDate(1);
-    return new TimeOperation(date);
+    return new TimeOperation(date).format(type);
   }
   // 获取当月份 最后一天
-  getMonthLastDay() {
+  getMonthLastDay(type) {
     const date = new Date(this.#date);
     date.setMonth(this.#date.getMonth() + 1);
     date.setDate(0);
-    return new TimeOperation(date);
+    return new TimeOperation(date).format(type);
   }
   // 获取n分钟之后
-  getAfterMinutes(minutes = 0) {
+  getAfterMinutes(minutes = 0, type) {
     const date = new Date(this.#date);
     date.setMinutes(date.getMinutes() + minutes);
-    return date;
+    return new TimeOperation(date).format(type);
   }
   // 获取n小时之后
-  getAfterHours(hours = 0) {
+  getAfterHours(hours = 0, type) {
     const date = new Date(this.#date);
     date.setHours(date.getHours() + hours);
-    return date;
+    return new TimeOperation(date).format(type);
   }
   // 两个时间的差
   timeDistance(endTime, type = 'd') {
