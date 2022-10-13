@@ -1,3 +1,5 @@
+// @author 等鱼
+// TimeOperation 时间操作类
 export default class TimeOperation {
   #date;
   // 一小时
@@ -41,7 +43,8 @@ export default class TimeOperation {
   }
   // 调用自带函数
   call(fnName, value) {
-    this.#date[`${fnName}`](value);
+    if (value) this.#date[`${fnName}`](value);
+    else return this.#date[`${fnName}`]();
   }
   // 获取格式化的时间
   format(type = 'yyyy-MM-dd hh:mm:ss') {
