@@ -2,8 +2,6 @@
 
 #### 介绍
 
-<<<<<<< HEAD
-=======
 1. **TimeOperation类：**操作时间的工具类，持续更新。
 2. **StorageOperate对象**：操作session,local,可过期local。
 
@@ -57,5 +55,5 @@
 ​	3.`TimeDict.ONEMINUTES` 一分钟
 
 ​	4.`TimeDict.ONESECOND` 一秒
->>>>>>> d508e22 (新增存储操作可过期存储)
+
 

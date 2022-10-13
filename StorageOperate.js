@@ -5,12 +5,14 @@ export const fishSessionStorage = {
   set: (key, value) => window.sessionStorage.setItem(key, JSON.stringify(value)),
   remove: (key) => window.sessionStorage.removeItem(key)
 };
+// @author 等鱼
 // fishLocalStorage 永久存储操作对象
 export const fishLocalStorage = {
   get: (key) => JSON.parse(window.localStorage.getItem(key)),
   set: (key, value) => window.localStorage.setItem(key, JSON.stringify(value)),
   remove: (key) => window.localStorage.removeItem(key)
 };
+// @author 等鱼
 // fishExpireLocalStorage 可过期存储操作对象
 export const fishExpireLocalStorage = {
   get(key) {
@@ -33,6 +35,7 @@ export const fishExpireLocalStorage = {
     fishLocalStorage.remove(key);
   }
 };
+// @author 等鱼
 // 时间字典
 export const TimeDict = {
   ONEHOUR: 1000 * 60 * 60,
