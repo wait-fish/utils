@@ -40,13 +40,15 @@
 2. `fishLocalStorage.set(key, value)`
 3. `fishLocalStorage.remove(key)`
 
-###### 2.3 fishExpireLocalStorage对象
+###### 2.3 fishExpireLocalStorage可过期对象
 
 1. `fishExpireLocalStorage.get(key)`
 2. `fishExpireLocalStorage.set(key, value, expire)` expire过期时间ms
 3. `fishExpireLocalStorage.remove(key)`
 
-###### 2.4 TimeDict时间字典
+##### 3. TimeDict时间字典
+
+方便设置过期时间使用
 
 ​	1.`TimeDict.ONEHOUR` 一小时
 
